@@ -1,7 +1,8 @@
 angular.module('MainCtrl', []).controller('MainController', function() {
 	var vm = this;
-	var player1 = 'X';
-	var player2 = 'O';
+	// var player1 = 'X';
+	// var player2 = 'O';
+	var plays = 1;
 	var turn = 0;
 
 	vm.tagline = 'Start the game!';
@@ -28,6 +29,7 @@ angular.module('MainCtrl', []).controller('MainController', function() {
 			}
 			checkScore();
 		}
+		plays++;
 	}
 
 	function checkScore(){
@@ -72,7 +74,9 @@ angular.module('MainCtrl', []).controller('MainController', function() {
 					vm.board[1][1].value === vm.board[2][0].value) {
 						var winner = vm.board[0][2].value;
 						console.log(winner, 'wins (diagonal 1)');
-		} 
+		} else if (plays == 9) {
+			console.log('tie game!');
+		}
 	}
 
 
