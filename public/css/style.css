@@ -1,3 +1,20 @@
 body {
   padding-top:30px;
 }
+
+.tile {
+  height: 50px;
+  width: 50px;
+  background: cyan;
+  display: inline-block;
+  margin: 10px;
+  padding: 15px;
+  vertical-align: top;
+}
+
+.tilerow {
+  display: block;
+  clear: both;
+  text-align: center;
+  width: 100%;
+}

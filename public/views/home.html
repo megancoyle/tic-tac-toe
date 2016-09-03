@@ -1,5 +1,11 @@
 <div class="jumbotron text-center">
 	<h1>Tic Tac Toe</h1>
 
-	<p>{{ tagline }}</p>
+	<p>{{ vm.tagline }}</p>
+</div>
+
+<div class="tilerow" ng-repeat="(i, row) in vm.board">
+	<div class="tile" ng-repeat="(j, tile) in row"  ng-click="vm.onCellClick(i, j, tile.value)">
+		{{tile.value}}
+	</div>
 </div>
