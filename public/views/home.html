@@ -9,3 +9,20 @@
 		{{tile.value}}
 	</div>
 </div>
+
+<div ng-if='vm.endGame'>
+	<a href='' ng-click='vm.resetBoard()'>Play again?</a>
+</div>
+
+<div ng-controller="ChatController as chatCtrl">
+	<ul id="messages">
+      <!-- Prevent error due to duplicate messages by tracking each message via unique index -->
+      <li data-ng-repeat="message in chatCtrl.messages track by $index">{{message}}</li>
+    </ul>
+
+    <!-- New Message  -->
+    <form data-ng-submit="chatCtrl.sendMessage()">
+      <input data-ng-model="chatCtrl.newMessage" autocomplete="off" />
+      <button>Send</button>
+    </form>
+</div>

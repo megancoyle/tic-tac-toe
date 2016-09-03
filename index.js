@@ -4,12 +4,15 @@ var app            = express();
 var mongoose       = require('mongoose');
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
+var appEx = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
 // configuration ===========================================
 
 var db = require('./config/db');
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 // mongoose.connect(db.url);
 
 // get all data of body (POST) parameters
@@ -22,6 +25,22 @@ app.use(express.static(__dirname + '/public')); // set the static files location
 
 // routes ==================================================
 require('./app/routes')(app); // pass application into routes
+
+appEx.get('/', function(req, res){
+  res.sendfile(__dirname + '/views/home.html');
+});
+
+io.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    io.emit('chat message', msg);
+    console.log('message: ' + msg);
+  })
+  console.log('a user connected');
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+  })
+})
+
 
 // start app ===============================================
 app.listen(port);
