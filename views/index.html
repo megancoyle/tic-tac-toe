@@ -7,23 +7,32 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-
     <script src="/js/app.js"></script>
     <script src="/js/chat.controller.js"></script>
     <script src="/js/main.controller.js"></script>
   </head>
   <body>
-    <div ng-controller="mainCtrl as vm">
-      <div class="tilerow" ng-repeat="(i, row) in vm.board">
-	<div class="tile" ng-repeat="(j, tile) in row"  ng-click="vm.onCellClick(i, j, tile.value)">
-		{{tile.value}}
-	</div>
-</div>
+    <div class="page-header">
+      <div class="container">
+          <h1><a href="/">tic tac toe</a></h1>
+          <nav>
+            <!-- <a data-ui-sref="game">Play</a> -->
+          </nav>
+        </div>
+      </div>
+    <div class="board">
+      <div ng-controller="mainCtrl as vm">
+        <div class="tilerow" ng-repeat="(i, row) in vm.board">
+        	<div class="tile" ng-repeat="(j, tile) in row"  ng-click="vm.onCellClick(i, j, tile.value)">
+        		{{tile.value}}
+        	</div>
+        </div>
 
-<div ng-if='vm.endGame'>
-	<a href='' ng-click='vm.resetBoard()'>Play again?</a>
-</div>
-    </div>
+        <div ng-if='vm.endGame'>
+  	      <a href='' ng-click='vm.resetBoard()'>Play again?</a>
+        </div>
+      </div>
+  </div>
     <!-- Message List  -->
     <div ng-controller="chatCtrl as cm">
     <ul id="messages">

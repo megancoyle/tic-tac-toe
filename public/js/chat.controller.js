@@ -24,5 +24,7 @@ function chatController ($scope) {
     $scope.$apply(function () {
       cm.messages.push(msg)
     })
+    var messages = document.getElementById("messages");
+    messages.scrollTop = messages.scrollHeight;
   });
 }

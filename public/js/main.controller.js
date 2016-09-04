@@ -25,13 +25,13 @@ angular
   socket.on('sync board', function (board) {
     vm.board = board;
     $scope.$apply();
-    console.log('got a new board from the server', board);
+    // console.log('got a new board from the server', board);
   });
 
   // logic for clicking tiles
   vm.onCellClick = function(row, column, value) {
     if (value !== '') {
-      console.log('already taken');
+      // console.log('already taken');
       return;
     }
 
@@ -61,7 +61,7 @@ angular
   }
 
   function syncBoard() {
-    console.log('board to sync', vm.board);
+    // console.log('board to sync', vm.board);
     socket.emit('sync board', vm.board);
   }
 

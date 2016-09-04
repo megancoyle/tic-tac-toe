@@ -25,7 +25,7 @@ form button {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  max-height:250px;
+  height:150px;
   overflow-y:auto;
   position: fixed;
   bottom: 30px;
@@ -43,7 +43,7 @@ form button {
   bottom:0px;
   height:30px;
   width:100%;
-  background:#999;
+  background:black;
 }
 /* IE 6 */
 * html #footer {
@@ -65,4 +65,38 @@ display: block;
 clear: both;
 text-align: center;
 width: 100%;
+}
+
+.page-header {
+    margin-top: 0;
+    background: black;
+    padding: 10px;
+}
+.page-header h1 {
+    display: inline-block;
+}
+.page-header h1 a {
+  color: white;
+  text-decoration: none;
+}
+nav {
+    float: right;
+    padding-top: 30px;
+}
+.page-header nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.page-header nav a:hover{
+  color: #ff471a;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.board {
+  margin-top: 10%;
 }
