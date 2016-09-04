@@ -1,1 +1,6 @@
-angular.module('ticTacToe', ['ngRoute', 'appRoutes', 'MainCtrl', 'ChatCtrl', 'GameCtrl', 'GameService', 'UserCtrl', 'UserService']);
+// Initialize client socket
+ var socket = io();
+
+ // Define initial Angular module
+ angular
+   .module('tictactoe', [])

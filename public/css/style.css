@@ -1,27 +1,68 @@
-body {
-  padding-top:30px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
+body {
+  font: 13px Helvetica, Arial;
+}
+form {
+  background: #000;
+  padding: 3px;
+}
+form input {
+  border: 0;
+  padding: 10px;
+  width: 90%;
+  margin-right: .5%;
+}
+form button {
+  width: 9%;
+  background: rgb(130, 224, 255);
+  border: none; padding: 10px;
+}
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  max-height:250px;
+  overflow-y:auto;
+  position: fixed;
+  bottom: 30px;
+  width: 100%;
+}
+#messages li {
+  padding: 5px 10px;
+}
+#messages li:nth-child(odd) {
+  background: #eee;
+}
+#footer {
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:30px;
+  width:100%;
+  background:#999;
+}
+/* IE 6 */
+* html #footer {
+   position:absolute;
+   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
 .tile {
-  height: 50px;
-  width: 50px;
-  background: cyan;
-  display: inline-block;
-  margin: 10px;
-  padding: 15px;
-  vertical-align: top;
+height: 50px;
+width: 50px;
+background: cyan;
+display: inline-block;
+margin: 10px;
+padding: 15px;
+vertical-align: top;
 }
 
 .tilerow {
-  display: block;
-  clear: both;
-  text-align: center;
-  width: 100%;
+display: block;
+clear: both;
+text-align: center;
+width: 100%;
 }
-
-form { background: #000; padding: 3px; width: 100%; }
-      form input { border: 0; padding: 10px; width: 80%; }
-      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-      #messages { list-style-type: none; margin: 0; padding: 0; }
-      #messages li { padding: 5px 10px; }
-      #messages li:nth-child(odd) { background: #eee; }
