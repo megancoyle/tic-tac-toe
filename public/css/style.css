@@ -1,14 +1,25 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+@import 'https://fonts.googleapis.com/css?family=Indie+Flower';
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
-  font: 13px Helvetica, Arial;
+  font: 12px;
+  font-family: 'Roboto', sans-serif;
+  background: url('../images/chalkboard.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 form {
   background: #000;
   padding: 3px;
+  margin: 0 auto;
 }
 form input {
   border: 0;
@@ -17,19 +28,23 @@ form input {
   margin-right: .5%;
 }
 form button {
-  width: 9%;
+  width: 8%;
   background: rgb(130, 224, 255);
-  border: none; padding: 10px;
+  border: none;
+  padding: 10px;
 }
 #messages {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  height:150px;
+  height:100px;
   overflow-y:auto;
   position: fixed;
   bottom: 30px;
   width: 100%;
+  font-size: 12px;
+  background: white;
+  border-top: 1px solid gray;
 }
 #messages li {
   padding: 5px 10px;
@@ -44,6 +59,7 @@ form button {
   height:30px;
   width:100%;
   background:black;
+  text-align: center;
 }
 /* IE 6 */
 * html #footer {
@@ -51,13 +67,17 @@ form button {
    top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
 }
 .tile {
-height: 50px;
-width: 50px;
-background: cyan;
+height: 70px;
+width: 70px;
+background: rgba(255,255,255,0.6);
 display: inline-block;
 margin: 10px;
 padding: 15px;
 vertical-align: top;
+font-family: 'Indie Flower', cursive;
+font-size: 2.2em;
+line-height: 1;
+font-weight: bold;
 }
 
 .tilerow {
@@ -70,7 +90,7 @@ width: 100%;
 .page-header {
     margin-top: 0;
     background: black;
-    padding: 10px;
+    padding: 8px;
 }
 .page-header h1 {
     display: inline-block;
@@ -98,5 +118,12 @@ nav {
   margin: 0 auto;
 }
 .board {
-  margin-top: 10%;
+  margin-top: 30px;
+}
+.end {
+  text-align: center;
+}
+.end a {
+  color: black;
+  text-decoration: none;
 }

@@ -58,6 +58,7 @@ angular
     [{ value: '' }, { value: '' }, { value: '' }],
     [{ value: '' }, { value: '' }, { value: '' }]
     ]
+    vm.endGame = false;
   }
 
   function syncBoard() {
