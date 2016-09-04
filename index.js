@@ -17,6 +17,11 @@ io.on('connection', function(socket){
   console.log('a user connected');
   socket.on('disconnect', function(){
     console.log('user disconnected');
+  }) // add additional logic
+
+  socket.on('sync board', function(board) {
+    console.log('updating board');
+    io.emit('sync board', board);
   })
 })
 

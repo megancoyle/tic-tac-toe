@@ -1,11 +1,12 @@
 angular
   .module('tictactoe')
   .controller('mainCtrl', [
+    "$scope",
     mainController
   ])
 
   // Define Main controller
-  function mainController(){
+  function mainController($scope){
     var vm = this;
     // var player1 = 'X';
     // var player2 = 'O';
@@ -21,11 +22,19 @@ angular
   ]
   vm.class = "tile";
 
+  socket.on('sync board', function (board) {
+    vm.board = board;
+    $scope.$apply();
+    console.log('got a new board from the server', board);
+  });
+
   // logic for clicking tiles
   vm.onCellClick = function(row, column, value) {
     if (value !== '') {
-    console.log('already taken');
-    } else {
+      console.log('already taken');
+      return;
+    }
+
     if (turn == 0) {
       // if x is up
       vm.board[row][column].value = 'X';
@@ -36,7 +45,7 @@ angular
       turn = 0;
     }
     checkScore();
-    }
+    syncBoard();
     plays++;
   }
 
@@ -49,6 +58,11 @@ angular
     [{ value: '' }, { value: '' }, { value: '' }],
     [{ value: '' }, { value: '' }, { value: '' }]
     ]
+  }
+
+  function syncBoard() {
+    console.log('board to sync', vm.board);
+    socket.emit('sync board', vm.board);
   }
 
   function checkScore(){
