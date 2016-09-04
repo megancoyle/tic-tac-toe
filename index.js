@@ -23,6 +23,14 @@ io.on('connection', function(socket){
     console.log('updating board');
     io.emit('sync board', board);
   })
+  socket.on('winner info', function(winner) {
+    console.log('updating winner text');
+    io.emit('winner info', winner);
+  })
+  socket.on('reset game', function () {
+    console.log('resetting game');
+    io.emit('reset game');
+  });
 })
 
 http.listen(3000, function(){
