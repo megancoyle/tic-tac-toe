@@ -14,7 +14,7 @@ Single-page web app that utilizes Angular JS and Web sockets so multiple users c
 npm install
 ```
 ## Unsolved Problems/Next Steps
-* While working on this application, I decided to simplify things by not using the entire MEAN stack application. Moving forward, I would want to tackle using Mong DB for this.
+* While working on this application, I decided to simplify things by not using the entire MEAN stack. Moving forward, I would want to tackle using Mongo DB for this.
 * Prompting users for their names so their name is printed next to their chat messages.
 * Setting X or O to specific users - at the moment a user can play both parts even when two players are connected.
-* Deploying this somehow
+* Deploying the application
