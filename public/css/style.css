@@ -29,7 +29,7 @@ form input {
 }
 form button {
   width: 8%;
-  background: rgb(130, 224, 255);
+  background: gray;
   border: none;
   padding: 10px;
 }
